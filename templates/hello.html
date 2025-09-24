@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Hello{% endblock title %}
+
+{% block content %}
+{% if data.name == None and data.age == None %}
+<h1>Hola mundo!!</h1>
+{% elif data.age == None %}
+<h1>Hola, {{data.name}}</h1>
+
+{% else %}
+<h1>Hola, {{data.name}} el doble de tu edad es: {{data.age * 2}}</h1>
+{% endif %}
+{% endblock %}

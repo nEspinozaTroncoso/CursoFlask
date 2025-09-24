@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}index{% endblock title %}
+
+{% block content %}
+<h1>que pasa!!!</h1>
+{% if name %}
+<p>Hola, {{ name | upper}}</p>
+{% else %}
+<p>Hola, desconocido</p>
+{% endif %}
+
+<h2>Lista de amigos</h2>
+<ul>
+    {% for friend in friends | reverse %}
+    <li>{{ friend }}</li>
+    {% endfor %}
+</ul>
+
+<p>la fecha de hoy es: {{ date | today }}</p>
+<p>La frase repetida es {{ repeat('Hola ',5) }}</p>
+{% endblock content %}

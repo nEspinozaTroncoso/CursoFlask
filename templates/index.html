@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} <!-- Hereda la estructura y estilos de base.html -->
 
-{% block title %}index{% endblock title %}
+{% block title %}index{% endblock title %} <!-- Título de la página -->
 
 {% block content %}
-<h1>que pasa!!!</h1>
+<h1>Curso Python/Flask</h1> <!-- Encabezado principal de la página -->
+
 {% if name %}
-<p>Hola, {{ name | upper}}</p>
+<p>Hola, {{ name | upper}}</p> <!-- Saludo personalizado en mayúsculas si hay nombre -->
 {% else %}
-<p>Hola, desconocido</p>
+<p>Hola, desconocido</p> <!-- Saludo genérico si no hay nombre -->
 {% endif %}
 
 <h2>Lista de amigos</h2>
 <ul>
     {% for friend in friends | reverse %}
-    <li>{{ friend }}</li>
+    <li>{{ friend }}</li> <!-- Muestra cada amigo en la lista, en orden inverso -->
     {% endfor %}
 </ul>
 
-<p>la fecha de hoy es: {{ date | today }}</p>
+<p>la fecha de hoy es: {{ date | today }}</p> <!-- Muestra la fecha actual usando el filtro personalizado 'today' -->
 <p>La frase repetida es {{ repeat('Hola ',5) }}</p>
+<!-- Muestra la frase 'Hola' repetida 5 veces usando la función global 'repeat' -->
 {% endblock content %}

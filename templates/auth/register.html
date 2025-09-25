@@ -1,0 +1,21 @@
+{% extends 'base.html' %} <!-- Hereda la estructura de base.html -->
+
+{% block title %}Registro{% endblock %} <!-- Título de la página de registro -->
+
+{% block content %}
+<h1>Registrar usuario</h1>
+
+<form action="" method="post"> <!-- Formulario de registro de usuario -->
+    {{ form.hidden_tag() }} <!-- Campo oculto para protección CSRF -->
+    {{ form.username.label }} {{ form.username }} <!-- Campo para el nombre de usuario -->
+    <br>
+    {{ form.password.label }} {{ form.password }} <!-- Campo para la contraseña -->
+    <br>
+    {{ form.submit }} <!-- Botón para enviar el formulario -->
+</form>
+
+{% if error %}
+<p style="color: red;">{{error}}</p> <!-- Muestra el mensaje de error si existe -->
+{% endif %}
+
+{% endblock %}

@@ -2,21 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %}</title>
+    <!-- Configura el viewport para dispositivos móviles -->
+    <title>{% block title %}{% endblock title %}</title> <!-- Bloque para el título de la página -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Enlaza la hoja de estilos CSS -->
 </head>
 
 <body>
+    <!-- Barra de navegación principal -->
     <nav>
         <ul>
-            <li><a href="{{  url_for('index') }}">Inicio</a></li>
-            <li><a href="{{  url_for('hello') }}">Hello</a></li>
+            <li><a href="{{  url_for('index') }}">Inicio</a></li> <!-- Enlace a la página principal -->
+            <li><a href="{{  url_for('hello') }}">Hello</a></li> <!-- Enlace a la página Hello -->
+            <li><a href="{{  url_for('register') }}">Registrar usuario</a></li> <!-- Enlace al registro de usuario -->
         </ul>
     </nav>
 
     {% block content %}
-    {% endblock content %}
+    {% endblock content %} <!-- Bloque para el contenido específico de cada página -->
+
+    <script src="{{url_for('static',filename='js/main.js')}}"></script> <!-- Enlaza el archivo JS principal -->
 
 </body>
 

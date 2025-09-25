@@ -1,0 +1,13 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: sans-serif;
+    /* Fuente sin serifas para mejor legibilidad */
+    background-color: #ccc;
+    /* Color de fondo gris claro */
+}
+
+/* Estilos para los encabezados h1 */
+h1 {
+    color: brown;
+    /* Color marrón para los títulos principales */
+}

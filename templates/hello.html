@@ -1,15 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} <!-- Hereda la estructura de base.html -->
 
-
-{% block title %}Hello{% endblock title %}
+{% block title %}Hello{% endblock title %} <!-- Título de la página -->
 
 {% block content %}
+{# Muestra diferentes mensajes según los datos recibidos #}
 {% if data.name == None and data.age == None %}
-<h1>Hola mundo!!</h1>
+<h1>Hola mundo!!</h1> <!-- Mensaje por defecto si no hay datos -->
 {% elif data.age == None %}
-<h1>Hola, {{data.name}}</h1>
-
+<h1>Hola, {{data.name}}</h1> <!-- Saludo personalizado si solo hay nombre -->
 {% else %}
-<h1>Hola, {{data.name}} el doble de tu edad es: {{data.age * 2}}</h1>
+<h1>Hola, {{data.name}} el doble de tu edad es: {{data.age * 2}}</h1> <!-- Saludo con cálculo si hay nombre y edad -->
 {% endif %}
 {% endblock %}
